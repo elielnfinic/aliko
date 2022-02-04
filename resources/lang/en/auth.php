@@ -16,5 +16,9 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    "welcome_login" => "Hello! let's get started",
+    "username" => "Nom d'utilisateur",
+    "password" => "Mot de passe",
+    "BTN_SIGN_IN" => "CONNEXION"
 
 ];
