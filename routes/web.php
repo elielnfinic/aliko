@@ -14,5 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('dashboard');
 });
+
+Route::get("/login/{langue}/",function(\Illuminate\Http\Request $request ,$langue){
+    \App::setLocale($langue);
+   return view("authentification/login");
+});
+
+Route::get("/login/",function(\Illuminate\Http\Request $request){
+    \App::setLocale("fr");
+    return view("authentification/login");
+});
+
+Route::post("/submit_login",[\App\Http\Controllers\LoginUtilisateur::class,"connecter_utilisateur"]);
