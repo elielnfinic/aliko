@@ -4,6 +4,24 @@
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
+                @foreach(\App\Models\Invitation::where("idUtilisateur",4) -> get() as $invitations)
+                <div class="col-xl-6 mb-5">
+                    <div class="card shadow">
+                        <div class="card-header">
+                            {{$invitations -> titre}}
+                        </div>
+                        <div class="card-body">
+                            {{$invitations -> contenu}}
+                        </div>
+                        <div class="card-footer">
+                            {{$invitations -> created_at -> diffForHumans()}}
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+
+            <div class="row">
                 <div class="col-12 col-xl-12 grid-margin stretch-card">
                     <div class="row w-100 flex-grow">
                         <div class="col-md-12 grid-margin stretch-card">
